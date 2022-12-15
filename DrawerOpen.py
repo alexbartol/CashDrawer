@@ -11,11 +11,11 @@ import sys
 def main():
     """ Open the drawer.
     """
-    if sys.platform == "linux2":
+    if sys.platform == 'linux2':
         base = "/dev/ttyS"
     else:
-        assert sys.platform == "win32"
-        base = "COM"
+        assert sys.platform == 'win32'
+        base = 'COM'
 
     # COM ports can change and I didn't want to hardcode it so we just try each
     # of tem from 3-9
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     start_t = time.time()
     while time.time() <= start_t + max_time:
         if proc.is_alive():
-            print ".",
+            print('.', end='')
             time.sleep(.1)
         else:
             break
